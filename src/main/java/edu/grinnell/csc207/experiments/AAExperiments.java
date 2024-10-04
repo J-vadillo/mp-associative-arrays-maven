@@ -2,13 +2,16 @@ package edu.grinnell.csc207.experiments;
 
 import edu.grinnell.csc207.util.AssociativeArray;
 
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.fail;
+
 import java.io.PrintWriter;
 
 /**
  * Experiments with Associative Arrays.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Jana Vadillo
  */
 public class AAExperiments {
 
@@ -20,13 +23,13 @@ public class AAExperiments {
    * Log and conduct a call to `set`.
    *
    * @param pen
-   *   Where to log the message.
+   *            Where to log the message.
    * @param aa
-   *   The associative array we're using.
+   *            The associative array we're using.
    * @param key
-   *   The key to set.
+   *            The key to set.
    * @param val
-   *   The value to set.
+   *            The value to set.
    */
   public static void set(PrintWriter pen, AssociativeArray<String, String> aa,
       String key, String val) {
@@ -43,11 +46,11 @@ public class AAExperiments {
    * Log and conduct a call to `get`.
    *
    * @param pen
-   *   Where to log the message.
+   *            Where to log the message.
    * @param aa
-   *   The associative array.
+   *            The associative array.
    * @param key
-   *   The key.
+   *            The key.
    */
   public static void get(PrintWriter pen, AssociativeArray<String, String> aa,
       String key) {
@@ -63,11 +66,11 @@ public class AAExperiments {
    * Log and conduct a call to `hasKey`.
    *
    * @param pen
-   *   Where to log the message.
+   *            Where to log the message.
    * @param aa
-   *   The associative array.
+   *            The associative array.
    * @param key
-   *   The key.
+   *            The key.
    */
   public static void hasKey(PrintWriter pen,
       AssociativeArray<String, String> aa, String key) {
@@ -84,14 +87,16 @@ public class AAExperiments {
   // +------+
 
   /**
+   * Your Name Here
    * Run our expereiments.
    *
    * @param args
-   *   Command-line parameters. (Ignored.)
+   *             Command-line parameters. (Ignored.)
    *
    * @throws Exception
-   *   When something goes wrong. Usually an I/O issue or an unexpected
-   *   Associative Array hiccup.
+   *                   When something goes wrong. Usually an I/O issue or an
+   *                   unexpected
+   *                   Associative Array hiccup.
    */
   public static void main(String[] args) throws Exception {
     PrintWriter pen = new PrintWriter(System.out, true);
@@ -107,6 +112,7 @@ public class AAExperiments {
     get(pen, strings2strings, "k");
 
     // What happens if we try a different key?
+    set(pen, strings2strings, "q", "key2");
     hasKey(pen, strings2strings, "q");
     get(pen, strings2strings, "q");
 
@@ -114,6 +120,8 @@ public class AAExperiments {
     set(pen, strings2strings, null, "nothing");
     hasKey(pen, strings2strings, null);
     get(pen, strings2strings, null);
+
+    pen.println(strings2strings.toString());
 
     // And we're done.
     pen.close();
