@@ -113,7 +113,11 @@ public class AAExperiments {
 
     // What happens if we try a different key?
     set(pen, strings2strings, "q", "key2");
+    set(pen, strings2strings, "a", "key3");
+    set(pen, strings2strings, "x", "key4");
+    set(pen, strings2strings, "z", "key5");
     hasKey(pen, strings2strings, "q");
+    pen.println(strings2strings.toString());
     get(pen, strings2strings, "q");
 
     // What happens if we try the null key?

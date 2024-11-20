@@ -137,7 +137,7 @@ public class AssociativeArray<K, V> {
       keyAddress = find(key);
     } catch (KeyNotFoundException e) {
       this.size++;
-      if (pairs.length >= this.size) {
+      if (this.size >= this.pairs.length) {
         this.expand();
       } // Expand the array if needed
       this.pairs[this.size - 1] = newpair;
